@@ -23,7 +23,7 @@
         </div><!-- #page-wrapper finish -->
     </div><!-- wrapper finish -->
 
-<script src="js/jquery-331.min.js"></script>     
-<script src="js/bootstrap-337.min.js"></script>           
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
 </body>
 </html>
