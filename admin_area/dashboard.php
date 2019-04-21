@@ -1,3 +1,13 @@
+
+<?php 
+    
+    if(!isset($_SESSION['admin_email'])){
+        
+        echo "<script>window.open('login.php','_self')</script>";
+        
+    }else{
+
+?> 
 <div class="row"><!-- row no: 1 begin -->
     <div class="col-lg-12"><!-- col-lg-12 begin -->
         <h1 class="page-header"> Dashboard </h1>
@@ -307,3 +317,5 @@
     </div><!-- col-md-4 finish -->
     
 </div><!-- row no: 3 finish -->
+
+<?php } ?>
