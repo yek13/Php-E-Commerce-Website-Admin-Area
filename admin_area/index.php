@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fitit Admin Area</title>
+    <title>M-Dev Store Admin Area</title>
     <link rel="stylesheet" href="css/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,13 +17,21 @@
         <div id="page-wrapper"><!-- #page-wrapper begin -->
             <div class="container-fluid"><!-- container-fluid begin -->
                 
+                <?php
                 
+                    if(isset($_GET['dashboard'])){
+                        
+                        include("dashboard.php");
+                        
+                }
+                
+                ?>
                 
             </div><!-- container-fluid finish -->
         </div><!-- #page-wrapper finish -->
     </div><!-- wrapper finish -->
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+<script src="js/jquery-331.min.js"></script>     
+<script src="js/bootstrap-337.min.js"></script>           
 </body>
 </html>

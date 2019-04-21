@@ -144,9 +144,9 @@ function getCats(){
     
 }
     
-/// finish getCats functions ///
+/// finish getCats functions. ///
 
-/// begin getpcatpro functions ///
+/// begin getpcatpro functions. ///
 
 function getpcatpro(){
     
