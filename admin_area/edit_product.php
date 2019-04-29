@@ -1,6 +1,5 @@
 <?php 
 
-//include("includes/db.php");
     if(!isset($_SESSION['admin_email'])){
         
         echo "<script>window.open('login.php','_self')</script>";
@@ -9,16 +8,64 @@
 
 ?>
 
+<?php 
+
+    if(isset($_GET['edit_product'])){
+        
+        $edit_id = $_GET['edit_product'];
+        
+        $get_p = "select * from products where product_id='$edit_id'";
+        
+        $run_edit = mysqli_query($con,$get_p);
+        
+        $row_edit = mysqli_fetch_array($run_edit);
+        
+        $p_id = $row_edit['product_id'];
+        
+        $p_title = $row_edit['product_title'];
+        
+        $p_cat = $row_edit['p_cat_id'];
+        
+        $cat = $row_edit['cat_id'];
+        
+        $p_image1 = $row_edit['product_img1'];
+        
+        $p_image2 = $row_edit['product_img2'];
+        
+        $p_image3 = $row_edit['product_img3'];
+        
+        $p_price = $row_edit['product_price'];
+        
+        $p_keywords = $row_edit['product_keywords'];
+        
+        $p_desc = $row_edit['product_desc'];
+        
+    }
+        
+        $get_p_cat = "select * from product_categories where p_cat_id='$p_cat'";
+        
+        $run_p_cat = mysqli_query($con,$get_p_cat);
+        
+        $row_p_cat = mysqli_fetch_array($run_p_cat);
+        
+        $p_cat_title = $row_p_cat['p_cat_title'];
+        
+        $get_cat = "select * from categories where cat_id='$cat'";
+        
+        $run_cat = mysqli_query($con,$get_cat);
+        
+        $row_cat = mysqli_fetch_array($run_cat);
+        
+        $cat_title = $row_cat['cat_title'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Insert Product</title>
- <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-  <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Insert Products </title>
 </head>
 <body>
     
@@ -30,7 +77,7 @@
             
             <li class="active"><!-- active Begin -->
                 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Products
+                <i class="fa fa-dashboard"></i> Dashboard / Edit Products
                 
             </li><!-- active Finish -->
             
@@ -66,7 +113,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_title" type="text" class="form-control" required>
+                          <input name="product_title" type="text" class="form-control" required value="<?php echo $p_title; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -80,7 +127,7 @@
                           
                           <select name="product_cat" class="form-control"><!-- form-control Begin -->
                               
-                              <option> Select a Category Product </option>
+                              <option value="<?php echo $p_cat; ?>"> <?php echo $p_cat_title; ?> </option>
                               
                               <?php 
                               
@@ -116,7 +163,7 @@
                           
                           <select name="cat" class="form-control"><!-- form-control Begin -->
                               
-                              <option> Select a Category </option>
+                              <option value="<?php echo $cat; ?>"> <?php echo $cat_title; ?> </option>
                               
                               <?php 
                               
@@ -152,6 +199,10 @@
                           
                           <input name="product_img1" type="file" class="form-control" required>
                           
+                          <br>
+                          
+                          <img width="70" height="70" src="product_images/<?php echo $p_image1; ?>" alt="<?php echo $p_image1; ?>">
+                          
                       </div><!-- col-md-6 Finish -->
                        
                    </div><!-- form-group Finish -->
@@ -162,7 +213,11 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_img2" type="file" class="form-control" required>
+                          <input name="product_img2" type="file" class="form-control">
+                          
+                          <br>
+                          
+                          <img width="70" height="70" src="product_images/<?php echo $p_image2; ?>" alt="<?php echo $p_image2; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -174,7 +229,11 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_img3" type="file" class="form-control form-height-custom" required>
+                          <input name="product_img3" type="file" class="form-control form-height-custom">
+                          
+                          <br>
+                          
+                          <img width="70" height="70" src="product_images/<?php echo $p_image3; ?>" alt="<?php echo $p_image3; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -186,7 +245,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_price" type="text" class="form-control" required>
+                          <input name="product_price" type="text" class="form-control" required value="<?php echo $p_price; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -198,7 +257,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_keywords" type="text" class="form-control" required>
+                          <input name="product_keywords" type="text" class="form-control" required value="<?php echo $p_keywords; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -210,7 +269,11 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <textarea name="product_desc" cols="19" rows="6" class="form-control"></textarea>
+                          <textarea name="product_desc" cols="19" rows="6" class="form-control">
+                              
+                              <?php echo $p_desc; ?>
+                              
+                          </textarea>
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -222,7 +285,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="submit" value="Insert Product" type="submit" class="btn btn-primary form-control">
+                          <input name="update" value="Update Product" type="submit" class="btn btn-primary form-control">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -237,10 +300,8 @@
     </div><!-- col-lg-12 Finish -->
     
 </div><!-- row Finish -->
-        
-    <!--<script src="js/jquery-331.min.js"></script>
-    <script src="js/bootstrap-337.min.js"></script> 
-    <script src="js/tinymce/tinymce.min.js"></script> -->
+   
+    <script src="js/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea'});</script>
 </body>
 </html>
@@ -248,7 +309,7 @@
 
 <?php 
 
-if(isset($_POST['submit'])){
+if(isset($_POST['update'])){
     
     $product_title = $_POST['product_title'];
     $product_cat = $_POST['product_cat'];
@@ -269,14 +330,15 @@ if(isset($_POST['submit'])){
     move_uploaded_file($temp_name2,"product_images/$product_img2");
     move_uploaded_file($temp_name3,"product_images/$product_img3");
     
-    $insert_product = "insert into products (p_cat_id,cat_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc) values ('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc')";
+    $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',date=NOW(),product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_keywords='$product_keywords',product_desc='$product_desc',product_price='$product_price' where product_id='$p_id'";
     
-    $run_product = mysqli_query($con,$insert_product);
+    $run_product = mysqli_query($con,$update_product);
     
     if($run_product){
         
-        echo "<script>alert('Product has been inserted sucessfully')</script>";
-        echo "<script>window.open('index.php?view_products','_self')</script>";
+       echo "<script>alert('Your product has been updated Successfully')</script>"; 
+        
+       echo "<script>window.open('index.php?view_products','_self')</script>"; 
         
     }
     

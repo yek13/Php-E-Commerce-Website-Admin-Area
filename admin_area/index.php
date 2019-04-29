@@ -56,9 +56,9 @@
         $run_pending_orders = mysqli_query($con,$get_pending_orders);
         
         $count_pending_orders = mysqli_num_rows($run_pending_orders);
-        
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,8 +88,20 @@
                         
                         include("insert_product.php");
                         
-                    }
-                
+                }   if(isset($_GET['view_products'])){
+                        
+                        include("view_products.php");
+                        
+                }   if(isset($_GET['delete_product'])){
+                        
+                        include("delete_product.php");
+                        
+                }   if(isset($_GET['edit_product'])){
+                        
+                        include("edit_product.php");
+                        
+                }
+        
                 ?>
                 
             </div><!-- container-fluid finish -->
@@ -100,5 +112,6 @@
 <script src="js/bootstrap-337.min.js"></script>           
 </body>
 </html>
+
 
 <?php } ?>

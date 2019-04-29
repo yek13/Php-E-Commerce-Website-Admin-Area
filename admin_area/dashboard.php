@@ -1,4 +1,3 @@
-
 <?php 
     
     if(!isset($_SESSION['admin_email'])){
@@ -8,6 +7,7 @@
     }else{
 
 ?> 
+
 <div class="row"><!-- row no: 1 begin -->
     <div class="col-lg-12"><!-- col-lg-12 begin -->
         <h1 class="page-header"> Dashboard </h1>
@@ -219,9 +219,6 @@
                         </thead><!-- thead finish -->
                         
                         <tbody><!-- tbody begin -->
-                           
-                         
-                        <tbody><!-- tbody begin -->
                           
                             <?php 
                           
@@ -279,9 +276,9 @@
                                     
                                     <?php 
                                     
-                                        if($order_status=='Pending'||$order_status=='pending'){
+                                        if($order_status=='pending'){
                                             
-                                            echo $order_status='Pending';
+                                            echo $order_status='pending';
                                             
                                         }else{
                                             
@@ -296,10 +293,6 @@
                             </tr><!-- tr finish -->
                             
                             <?php } ?>
-                           
-                           
-                           
-                          
                             
                         </tbody><!-- tbody finish -->
                         
@@ -326,7 +319,7 @@
             <div class="panel-body"><!-- panel-body begin -->
                 <div class="mb-md thumb-info"><!-- mb-md thumb-info begin -->
 
-                    <img src="admin_images/<?php echo $admin_image; ?>" alt="admin-thumb-info" class="rounded img-responsive">
+                    <img src="admin_images/<?php echo $admin_image; ?>" alt="<?php echo $admin_image; ?>" class="rounded img-responsive">
                     
                     <div class="thumb-info-title"><!-- thumb-info-title begin -->
                        
@@ -346,7 +339,7 @@
                     
                     <hr class="dotted short">
                     
-                    <h5 class="text-muted"> About Me</h5>
+                    <h5 class="text-muted"> About Me </h5>
                     
                     <p><!-- p begin -->
                         
@@ -361,5 +354,6 @@
     </div><!-- col-md-4 finish -->
     
 </div><!-- row no: 3 finish -->
+
 
 <?php } ?>

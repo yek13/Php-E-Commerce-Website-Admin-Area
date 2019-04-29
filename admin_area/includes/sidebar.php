@@ -7,7 +7,7 @@
     }else{
 
 ?>
-   
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
   <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-</head>
-   <nav class="navbar navbar-inverse navbar-fixed-top"><!-- navbar navbar-inverse navbar-fixed-top begin -->
+</head>  
+<nav class="navbar navbar-inverse navbar-fixed-top"><!-- navbar navbar-inverse navbar-fixed-top begin -->
     <div class="navbar-header"><!-- navbar-header begin -->
         
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><!-- navbar-toggle begin -->
@@ -31,7 +31,7 @@
             
         </button><!-- navbar-toggle finish -->
         
-        <a href="index.php?dashboard" class="navbar-brand">Fitit Store Admin Area</a>
+        <a href="index.php?dashboard" class="navbar-brand">Admin Area</a>
         
     </div><!-- navbar-header finish -->
     
@@ -41,7 +41,7 @@
             
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><!-- dropdown-toggle begin -->
                 
-                <i class="fa fa-user"></i> <?php echo $admin_name; ?> <b class="caret"></b>
+                <i class="fa fa-user"></i> <?php echo $admin_name;  ?> <b class="caret"></b>
                 
             </a><!-- dropdown-toggle finish -->
             
