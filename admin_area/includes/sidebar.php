@@ -18,6 +18,7 @@
   <link rel="stylesheet"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
   <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 </head>  
+  
 <nav class="navbar navbar-inverse navbar-fixed-top"><!-- navbar navbar-inverse navbar-fixed-top begin -->
     <div class="navbar-header"><!-- navbar-header begin -->
         
